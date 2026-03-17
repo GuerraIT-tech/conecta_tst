@@ -1,0 +1,294 @@
+@extends('layouts.app')
+
+@section('title', 'HCL Licitações - Inteligência e Eficiência Escalável')
+
+@section('content')
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark">HCL</span>
+        <span class="brand-text">Licitações</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#planos">Planos</a>
+        <a href="#plataforma">Ferramentas</a>
+        <a href="#sobre">Um HCL</a>
+        <a href="#ajuda">Ajuda</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="admin/login">Acessar Conta</a>
+        <a class="btn btn-primary" href="admin/register">Cadastrar</a>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>
+          Licitações sem burocracia: <br />
+          <span class="text-light">a <span class="accent">HCL</span><br/>cuida de tudo</span>
+        </h1>
+
+        <p class="lead">
+          Gestão estratégica, integral e inteligente para desbloquear o potencial da sua empresa no mercado público.
+          Tecnologia proprietária, operação precisa e resultados reais com foco em lucro e eficiência.
+        </p>
+
+        <ul class="checks">
+          <li>Identificação estratégica de oportunidades lucrativas</li>
+          <li>Automação completa do ciclo de licitações</li>
+          <li>Conformidade e defesa jurídica assegurada</li>
+        </ul>
+
+        <a class="btn btn-primary btn-lg" href="admin/register">Entrar Agora</a>
+      </div>
+
+      <aside class="hero-panel" id="plataforma">
+        <div class="panel">
+          <div class="panel-title">
+            <span class="ico ico-app"></span>
+            <span>Plataforma HCL</span>
+          </div>
+
+          <div class="app-grid">
+            <a class="app" href="#">
+              <span class="ico ico-rocket"></span>
+              <strong>Início (Onboarding e SICAF)</strong>
+            </a>
+            <a class="app" href="#">
+              <span class="ico ico-search"></span>
+              <strong>Radar (Editais Relevantes)</strong>
+            </a>
+            <a class="app" href="#">
+              <span class="ico ico-doc"></span>
+              <strong>Documentação (DMS e Conformidade)</strong>
+            </a>
+
+            <a class="app" href="#">
+              <span class="ico ico-scale"></span>
+              <strong>Defesa (Risco & Recursos)</strong>
+            </a>
+            <a class="app" href="#">
+              <span class="ico ico-bot"></span>
+              <strong>Lanços (Automação)</strong>
+            </a>
+            <a class="app" href="#">
+              <span class="ico ico-chart"></span>
+              <strong>Insights (BI e KPIs)</strong>
+            </a>
+
+            <a class="app" href="#">
+              <span class="ico ico-money"></span>
+              <strong>Recebíveis (Pós-Contrato)</strong>
+            </a>
+            <a class="app" href="#">
+              <span class="ico ico-compass"></span>
+              <strong>Operação Gerenciada</strong>
+            </a>
+            <a class="app" href="#">
+              <span class="ico ico-lock"></span>
+              <strong>Compliance e Governança</strong>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Section: Destrava -->
+  <section class="strip strip-alt" id="sobre">
+    <div class="container">
+      <div class="section-head two-col">
+        <h2>A burocracia trava. A HCL destrava.</h2>
+        <p>Combinamos análise estratégica e tecnologia inteligente para conduzir sua empresa com excelência em todas as etapas do processo licitatório — da oportunidade ao resultado.</p>
+      </div>
+
+      <div class="card-row three">
+        <article class="card feature">
+          <span class="ico ico-user"></span>
+          <h3>Inteligência & Otimização</h3>
+          <p>Identificamos editais com maior potencial de lucro ao seu perfil, priorizando o que gera impacto real para o seu negócio.</p>
+        </article>
+        <article class="card feature">
+          <span class="ico ico-bolt"></span>
+          <h3>Eficiência Total — Gestão Integral</h3>
+          <p>Automatizamos e gerenciamos o ciclo completo — documentos, prazos e lanços — liberando seu tempo para o core business.</p>
+        </article>
+        <article class="card feature">
+          <span class="ico ico-lock"></span>
+          <h3>Gestão Assegurada e Jurídica</h3>
+          <p>Mitigamos riscos, garantimos conformidade e realizamos defesas estratégicas (Impugnações e Recursos) com previsibilidade.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Módulos -->
+  <section class="strip" aria-labelledby="ciclo">
+    <div class="container">
+      <h2 id="ciclo">Do início ao lucro: o ciclo completo em um só lugar</h2>
+      <p class="section-sub">Integramos módulos que funcionam de forma coordenada, entregando desempenho e segurança em cada fase das licitações.</p>
+
+      <div class="card-grid">
+        <article class="card module">
+          <span class="ico ico-rocket"></span>
+          <h3>Start — Habilitação e Credenciamento</h3>
+          <p>Onboarding completo, habilitação e credenciamento (SICAF) para garantir sua prontidão competitiva.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-search"></span>
+          <h3>Radar — Prospecção Estratégica</h3>
+          <p>Monitoramento avançado identifica e qualifica editais relevantes, priorizando oportunidades mais lucrativas.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-doc"></span>
+          <h3>Docs — Gestão Documental</h3>
+          <p>Centralize, versione e garanta a conformidade de documentos, evitando atrasos e falhas na habilitação.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-scale"></span>
+          <h3>Defesa — Risco & Jurídico</h3>
+          <p>Pontuação de Risco, conformidade e interposição de Impugnações e Recursos contra inconsistências de editais/concorrentes.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-bot"></span>
+          <h3>Lanços — Otimização & Automação</h3>
+          <p>Execução inteligente em preços e dispensas, com automação (robô) para maximizar desempenho e competitividade.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-chart"></span>
+          <h3>Insights — Inteligência de Negócios</h3>
+          <p>Relatórios, dashboards e KPIs para decisões estratégicas e melhoria contínua de resultados.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-money"></span>
+          <h3>Recebíveis — Pós-Contrato</h3>
+          <p>Gestão da recepção de pagamentos e controle financeiro de contratos governamentais, com previsibilidade.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-compass"></span>
+          <h3>Operação Gerenciada</h3>
+          <p>Playbooks proprietários e priorização de pipeline de alta margem para acelerar ganhos.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+
+        <article class="card module">
+          <span class="ico ico-lock"></span>
+          <h3>Compliance e Governança</h3>
+          <p>Processos e auditorias contínuas para garantir a conformidade e reduzir a exposição a riscos e avaliações.</p>
+          <a href="#" class="more">saiba mais →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Planos -->
+  <section class="strip strip-alt" id="planos" aria-labelledby="planos-title">
+    <div class="container">
+      <h2 id="planos-title">Planos de Assinatura</h2>
+      <p class="section-sub">Escolha o plano que melhor se adapta ao porte e ritmo da sua empresa.</p>
+
+      <div class="plans">
+        <article class="plan">
+          <h3>Impulso — MEI/ME/EPP</h3>
+          <p class="muted">Limite: Até 6</p>
+          <ul class="checks small">
+            <li>Gestão integral do ciclo (Start, Radar, Docs)</li>
+            <li>Defesa (análise de risco básico)</li>
+            <li>Insights (relatórios essenciais)</li>
+          </ul>
+          <a class="btn btn-surface" href="#">Saiba Mais</a>
+        </article>
+
+        <article class="plan plan-featured">
+          <h3>Conquista — MEI/ME/EPP</h3>
+          <p class="muted">Limite: Acima de 6</p>
+          <ul class="checks small">
+            <li>Gestão integral + priorização estratégica</li>
+            <li>Defesa (recursos estratégicos)</li>
+            <li>Insights avançados de desempenho</li>
+          </ul>
+          <a class="btn btn-primary" href="#">Saiba Mais</a>
+        </article>
+
+        <article class="plan">
+          <h3>Estratégia — Empresas</h3>
+          <p class="muted">Limite: Até 10</p>
+          <ul class="checks small">
+            <li>Gestão integral + governança & compliance</li>
+            <li>Defesa (pontuação de risco e impugnações)</li>
+            <li>Insights (dashboards executivos)</li>
+          </ul>
+          <a class="btn btn-surface" href="#">Saiba Mais</a>
+        </article>
+
+        <article class="plan plan-featured">
+          <h3>Domínio — Empresas</h3>
+          <p class="muted">Limite: Acima de 10</p>
+          <ul class="checks small">
+            <li>Gestão integral com automação de lanços</li>
+            <li>Defesa avançada (recursos e impugnações)</li>
+            <li>Insights completos (BI e KPIs personalizados)</li>
+          </ul>
+          <a class="btn btn-primary" href="#">Saiba Mais</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="brand brand-lg">
+          <span class="brand-mark">HCL</span><span class="brand-text">Licitações</span>
+        </div>
+        <p>Estratégia, tecnologia e gestão integral para o sucesso de sua empresa nas licitações.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="col">
+          <h4>Nossas Soluções</h4>
+          <a href="#plataforma">Plataforma HCL</a>
+          <a href="#planos">Planos</a>
+          <a href="#ciclo">Como Operamos</a>
+        </div>
+        <div class="col">
+          <h4>Suporte</h4>
+          <a href="#contato">Fale com a HCL</a>
+          <a href="#ajuda">Central de Ajuda</a>
+          <a href="#docs">Documentação</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2025 HCL Licitações. Todos os direitos reservados.</p>
+      <div class="social">
+        <span class="chip">em</span>
+        <span class="chip">in</span>
+        <span class="chip">X</span>
+      </div>
+    </div>
+  </footer>
+@endsection
