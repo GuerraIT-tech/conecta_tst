@@ -29,6 +29,7 @@ class UserService:
     @staticmethod
     def list_active_users() -> list[User]:
         return User.query.filter_by(is_active=True).order_by(User.name.asc()).all()
+        return User.query.filter_by(is_active=True).all()
 
 
 class BidService:
@@ -63,6 +64,7 @@ class BidService:
         bid = Bid.query.get_or_404(bid_id)
         db.session.delete(bid)
         db.session.commit()
+        return Bid.query.filter_by(is_active=True).all()
 
 
 class CompanyService:
@@ -115,6 +117,7 @@ class CompanyService:
         company = Company.query.get_or_404(company_id)
         db.session.delete(company)
         db.session.commit()
+        return Company.query.filter_by(is_active=True).all()
 
 
 class RadarService:

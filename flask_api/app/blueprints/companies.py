@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify
 from flask_jwt_extended import jwt_required
 
 from app.services import CompanyService
@@ -58,3 +59,11 @@ def update_company(company_id: int) -> tuple[dict, int]:
 def delete_company(company_id: int) -> tuple[dict[str, str], int]:
     CompanyService.delete_company(company_id)
     return {"status": "deleted"}, 200
+@companies_bp.get("")
+@jwt_required()
+def list_companies() -> tuple[list[dict], int]:
+    companies = CompanyService.list_active_companies()
+    return jsonify([
+        {"id": company.id, "corporate_name": company.corporate_name, "cnpj": company.cnpj}
+        for company in companies
+    ]), 200
