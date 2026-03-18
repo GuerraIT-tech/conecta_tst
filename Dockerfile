@@ -1,57 +1,45 @@
-FROM php:8.2-fpm
+FROM python:3.11-slim
 
-# set your user name, ex: user=carlos
-ARG user=arthurfabiano
-ARG uid=1000
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y libicu-dev g++\
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libzip-dev \
-    libgmp-dev \
-    zip \
-    unzip \
+WORKDIR /app
+
+# Dependências de sistema (Python/MySQL + utilitários)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     curl \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd mysqli pdo_mysql zip
+    ca-certificates \
+    gnupg \
+    default-libmysqlclient-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
 
-# Configurar extensões do PHP
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-configure gmp \
-    && docker-php-ext-configure intl \
-    && docker-php-ext-install intl
+# Node.js para build/execução do front-end React (Vite)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install PHP extensions
-RUN docker-php-ext-install mbstring pcntl bcmath gd mysqli pdo_mysql zip exif gmp sockets
+# Dependências Python do backend Flask
+COPY flask_api/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-# Ativar a extensão exif
-RUN docker-php-ext-enable exif
+# Dependências do front-end
+COPY frontend-react/package.json /app/frontend-react/package.json
+RUN python - <<'PY'
+import json
+from pathlib import Path
+package = Path('/app/frontend-react/package.json')
+json.load(package.open())
+print('package.json válido para Docker build')
+PY
+RUN cd /app/frontend-react && npm install
 
-# Get latest Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Código da aplicação
+COPY . /app
 
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
-# Install redis
-RUN pecl install -o -f redis \
-    &&  rm -rf /tmp/pear \
-    &&  docker-php-ext-enable redis
+EXPOSE 5000 5173
 
-# Instalar o Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Limpar o cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Set working directory
-WORKDIR /var/www
-
-# Copy custom configurations PHP
-COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini
-
-USER $user
+# Backend padrão (Flask API)
+CMD ["python", "flask_api/app.py"]
