@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <title>Preview Frontend</title>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-900 dark bg-slate-950 text-slate-100">
+  <header class="sticky top-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 xl:flex-row xl:items-center xl:justify-between">
+      <div>
+        <h1 class="text-xl font-bold">Conecta Licitações</h1>
+        <p class="text-sm text-slate-400">Plataforma comercial, operação do cliente e gestão administrativa.</p>
+      </div>
+      <div class="flex flex-col gap-3 xl:items-end">
+        <nav class="flex flex-wrap gap-2 text-sm">
+          <span class="rounded-xl bg-sky-500 px-4 py-2 font-medium text-slate-950">Home</span>
+          <span class="rounded-xl bg-slate-900 px-4 py-2 font-medium text-slate-200">Planos</span>
+          <span class="rounded-xl bg-slate-900 px-4 py-2 font-medium text-slate-200">Contato</span>
+          <span class="rounded-xl bg-slate-900 px-4 py-2 font-medium text-slate-200">Login</span>
+          <span class="rounded-xl bg-slate-900 px-4 py-2 font-medium text-slate-200">Cadastro</span>
+          <span class="rounded-xl bg-slate-900 px-4 py-2 font-medium text-slate-200">Clientes</span>
+          <span class="rounded-xl bg-slate-900 px-4 py-2 font-medium text-slate-200">Licitações</span>
+          <span class="rounded-xl bg-slate-900 px-4 py-2 font-medium text-slate-200">Relatórios</span>
+        </nav>
+        <span class="rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-200">☀️ Light</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-6 py-8">
+    <section class="grid gap-6 rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-sky-900 p-10 text-white lg:grid-cols-[1.2fr,0.8fr]">
+      <div>
+        <p class="text-sm uppercase tracking-[0.3em] text-sky-300">Website institucional + plataforma</p>
+        <h2 class="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Comercialização de planos de consultoria em licitações com experiência premium.</h2>
+        <p class="mt-5 max-w-2xl text-lg text-slate-300">Website institucional, gestão de planos e assinaturas, área do cliente, acompanhamento de licitações, upload documental e painel administrativo.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="rounded-2xl bg-sky-400 px-5 py-3 font-semibold text-slate-950">Ver planos</span>
+          <span class="rounded-2xl border border-white/20 px-5 py-3 font-semibold">Criar conta</span>
+        </div>
+      </div>
+      <div class="grid gap-4 rounded-[1.5rem] bg-white/10 p-6 backdrop-blur">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">Upload de documentos com checklist operacional</div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">Gestão de clientes, licitações e relatórios</div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">IA jurídica para análise documental e pendências</div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200">Painel administrativo com visão estratégica</div>
+      </div>
+    </section>
+
+    <section class="mt-8 grid gap-6 md:grid-cols-3">
+      <article class="rounded-[1.75rem] border border-slate-800 bg-slate-900 p-8 shadow-sm"><p class="text-sm font-medium text-sky-500">Plano Essencial</p><h3 class="mt-2 text-2xl font-bold">R$ 790/mês</h3><p class="mt-4 text-sm text-slate-400">Ideal para empresas iniciando em licitações.</p></article>
+      <article class="rounded-[1.75rem] border border-slate-800 bg-slate-900 p-8 shadow-sm"><p class="text-sm font-medium text-sky-500">Plano Performance</p><h3 class="mt-2 text-2xl font-bold">R$ 1.490/mês</h3><p class="mt-4 text-sm text-slate-400">Operação comercial com checklist e inteligência.</p></article>
+      <article class="rounded-[1.75rem] border border-slate-800 bg-slate-900 p-8 shadow-sm"><p class="text-sm font-medium text-sky-500">Plano Enterprise</p><h3 class="mt-2 text-2xl font-bold">Sob consulta</h3><p class="mt-4 text-sm text-slate-400">Painel admin, IA jurídica e relatórios PDF.</p></article>
+    </section>
+  </main>
+</body>
+</html>
