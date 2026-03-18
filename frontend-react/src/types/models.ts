@@ -27,6 +27,7 @@ export interface Company {
   district?: string | null
   zip_code?: string | null
   phone?: string | null
+  cnpj?: string | null
 }
 
 export interface Radar {
