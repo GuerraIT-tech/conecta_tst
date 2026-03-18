@@ -6,5 +6,10 @@ import { App } from './App'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+import { HomePage } from './components/HomePage'
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <HomePage />
+  </React.StrictMode>,
 )

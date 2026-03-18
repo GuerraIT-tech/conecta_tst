@@ -27,13 +27,6 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Dependências do front-end
 COPY frontend-react/package.json /app/frontend-react/package.json
-RUN python - <<'PY'
-import json
-from pathlib import Path
-package = Path('/app/frontend-react/package.json')
-json.load(package.open())
-print('package.json válido para Docker build')
-PY
 RUN cd /app/frontend-react && npm install
 
 # Código da aplicação
